@@ -1,0 +1,27 @@
+void main(){
+  var nota1, nota2, nota3, media, mediaFinal, recuperacao;
+
+  print("Informe a primeira nota do aluno:")
+  nota1 = double.parse(stdin.readLineSync()!);
+  print("Agora nos informe a segunda nota:");
+  nota2 = double.parse(stdin.readLineSync()!);
+  print("Por fim, nos informe a terceira nota:");
+  nota3 = double.parse(stdin.readLineSync()!);
+
+  media = (nota1*2 + nota2*3 + nota3*5) / 10;
+
+  if (media >= 6){
+    print("O aluno está aprovado com a média final igual a: $media");
+  } else if ( media < 4) {
+    print("O aluno está reprovado com a média final igual a: $media");
+  } else {
+    print("O aluno está em recuperação com a média final igual a: $media \n Informe a nota que o aluno obteve na recuperação:");
+    recuperacao = double.parse(stdin.readLineSync()!);
+    mediaFinal = (media + recuperacao) / 2;
+    if (mediaFinal < 5.5) {
+      print("O aluno está reprovado, mesmo após a recuperação, obtendo uma média final igual a: $mediaFinal");
+    } else {
+        print("O aluno está aprovado, após fazer a recuperação, obtendo uma média final igual a: $mediaFinal");
+    }
+  }
+}
